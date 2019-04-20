@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="num1" name="query" placeholder="Enter first number">
+    <input type="text" id="num2" placeholder="Enter Second number">
+    <button id="btn" class="btnclass">Hello World Button</button>
+    <!-- <button id="btn2" class="btnclass">Hello World Button 2</button> -->
+    <h1 id="display"></h1>
+        <script>
+            //make the object availabe in the script 
+
+            let num1 = document.getElementById('num1');
+            let h1 = document.getElementById('display');
+            let btn = document.querySelector('#btn')
+            let body = document.querySelector('body');
+            let buttons = document.getElementsByClassName('btnclass');
+            buttons.onclick = function btnfunction(){
+                body.style.backgroundColor = "red";
+            }
+
+            //manipulate the num1 object
+            num1.onkeyup = function(){
+                let value = num1.value;
+                h1.innerHTML = value;
+            }
+
+            num1.onkeyup = function(){
+                let value = num1.value;
+                h1.innerHTML = value;
+            }
+        </script>
+        <script src=""></script>
+
+</body>
+</html>

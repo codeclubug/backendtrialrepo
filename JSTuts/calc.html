@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+        input{
+            width: 250px;
+            height: 40px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text"  id="num1">
+    <input type="text"  id="num2">
+    <input type="text" id="sign">
+    <input type="submit" id="button" value="Perform"> 
+    <h1 id="display">Hello World</h1> 
+    
+    <br>
+    <h1>Password Test</h1>
+    <input type="password" name="" id="password">
+
+    
+    <script>
+        
+        //make the objects availabe in the script
+        let num1 = document.querySelector('#num1');
+        let num2 = document.querySelector('#num2');
+        let operator = document.querySelector('#sign');
+        let button = document.querySelector('#button');
+        let display = document.querySelector('#display');
+        let password = document.querySelector('#password');
+        //
+
+        function performOperation(){
+            num1 = parseInt(num1.value);
+            num2 = parseInt(num2.value);
+            let sign = operator.value;
+            let results = 0;
+            switch(sign){
+                case "+":
+                    results = num1 + num2;
+                    display.innerHTML = "The result is ";
+                    break;
+                case "-":
+                    results = num1 - num2;
+                    break;
+                case "*":
+                    results = num1 * num2;
+                    break;
+                case "/":
+                    results = num1 / num2;
+                    break;
+                default:
+                    display.innerHTML = "The result is "; 
+                    break;   
+            }       
+            display.innerHTML = `The result is ${results} and I am happy for you hahahahah`;     
+        }
+
+        function passwordTest(){
+            const pass = password.value;
+            const firstLetter = pass[0];
+            let temp = firstLetter.toUpperCase();
+            if(firstLetter == temp){
+                display.innerHTML = "Password Strong";
+            }else{
+                display.innerHTML = "Password Weak";
+            }
+        }
+
+        button.addEventListener('click',performOperation);
+        password.addEventListener('keyup',passwordTest);
+
+
+    
+    </script>
+
+
+</body>
+</html>
